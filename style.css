@@ -1,0 +1,1800 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    /* Sua cor de fundo original */
+    color: #000000;
+    font-size: 16px;
+    position: relative;
+
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    z-index: 100;
+    transition: height 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+
+}
+
+
+
+.logo-link {
+    text-decoration: none;
+    /* Remove o sublinhado padrão do link */
+    display: flex;
+    /* Mantém o flex para alinhamento da imagem dentro dele */
+    align-items: center;
+    /* Centraliza a imagem verticalmente */
+    width: fit-content;
+    /* Faz a largura do link se ajustar ao conteúdo (a imagem) */
+    max-width: 150px;
+    /* Um limite superior razoável para a logo */
+    flex-shrink: 0;
+    /* Impede que o link encolha mais do que o necessário em telas menores */
+    padding: 0;
+    /* Remova qualquer padding indesejado do link */
+
+
+}
+
+
+.logo {
+    width: 100%;
+    /* A imagem ocupa 100% da largura do seu pai (.logo-link) */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin-left: 90px;
+    ;
+    display: block;
+    /* Garante que a imagem se comporte como um bloco para respeitar larguras */
+    max-width: 200px;
+    /* Defina uma largura máxima para a imagem em pixels */
+    padding: 20px 15px;
+    /* Garanta que a imagem não tenha padding próprio */
+    /* Adicione esta linha para uma animação suave */
+
+}
+
+
+
+
+
+.logo-link.touch-feedback-active .logo {
+    transform: scale(1.05);
+    /* Um zoom menor para toque, para não ser exagerado */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    margin-right: 30px;
+    margin-top: 3px;
+    align-items: center;
+    /* 1. Garante que TODOS os itens do menu fiquem alinhados verticalmente */
+
+}
+
+nav a {
+    color: #0047AB;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    /*Adicione esta linha: */
+    transform: scale(1);
+    /* Garante o estado inicial do zoom */
+    display: inline-block;
+    /* Importante para o transform: scale funcionar bem em elementos inline */
+
+}
+
+nav a:hover {
+    color: #14a2dab6;
+    transform: scale(1.05);
+    /* Aumenta 5%. Ajuste o valor se quiser mais ou menos. */
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #128cbdb6;
+    transition: width 0.3s ease;
+
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Cria um espaço entre o ícone e o número */
+}
+
+/* 2. Aumenta o tamanho do ícone do WhatsApp */
+.whatsapp-link i {
+    font-size: 28px;
+    /* Você pode ajustar este valor se quiser maior ou menor */
+    line-height: 0;
+    /* Melhora o alinhamento vertical do ícone */
+}
+
+/* 3. Garante que o texto do número mantenha o estilo correto */
+.whatsapp-link span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 30px;
+    background-color: #0c0c0c;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+
+}
+
+#cursos,
+#sobre,
+#proposito,
+#contato,
+#endereco {
+    scroll-margin-top: 130px;
+    /* Espaço no topo para não ficar atrás do menu */
+}
+
+
+
+
+.hero-section {
+    margin-top: 104px;
+    /* Mantém o espaçamento do topo */
+    height: 86vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 2vw;
+    color: #020202;
+    position: relative;
+    background-image: url('img/Cultivando-direito-limpoo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* A MUDANÇA PRINCIPAL ESTÁ AQUI */
+    background-attachment: fixed;
+
+}
+
+.hero-background-image {
+    display: flex;
+    position: relative;
+}
+
+.hero-background-fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    /* Cor para a qual o fade será feito (branco) */
+    opacity: 0;
+    /* Começa totalmente transparente */
+    /* Ajustamos o z-index para 2 para ficar na frente do fundo do ::before (que é 1) */
+    z-index: 2;
+}
+
+/* Conteúdo da seção (título, parágrafo e botão) */
+.hero-content {
+
+    position: relative;
+
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 6;
+     transition: height 0.3s ease;
+
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 10px;
+    transform: translateY(-50px);
+    margin-left: auto;
+    margin-right: 8%;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+
+
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    /* Tamanho do título principal */
+    font-family: 'poppins', sans-serif;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 800;
+    /* Deixa o título mais forte e imponente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+
+
+.hero-content p {
+    font-size: 1.1rem;
+    font-family: 'poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #000000;
+    text-align: justify;
+    width: 100%;
+    border-radius: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    /* Sombra mais leve para o parágrafo */
+
+}
+
+.highlight {
+    color: #0047AB;
+    /* Usa a cor azul principal do seu site */
+    font-weight: 700;
+    /* Deixa a palavra destacada um pouco mais forte */
+}
+
+/* ========================================================= */
+/* CORES PERSONALIZADAS PARA O TÍTULO DO HERO                */
+/* ========================================================= */
+
+.c-azul-logo {
+    color: #0047AB;
+}
+
+/* ========================================================= */
+/* ESTILO PARA PALAVRA 'CRIANÇA' COLORIDA                  */
+/* ========================================================= */
+
+/* Garante que a palavra colorida não se quebre em linhas diferentes */
+.palavra-colorida {
+    display: inline-block;
+    white-space: nowrap;
+    /* Impede a quebra de linha dentro da palavra */
+}
+
+/* Define um estilo base para as letras, que herdarão a sombra do h1 */
+.palavra-colorida span {
+    font-weight: 900;
+    /* Deixa as letras bem destacadas */
+}
+
+/* Define as cores individuais para cada letra, como os lápis de cor */
+.letra-c {
+    color: #E42222;
+}
+
+/* Vermelho */
+.letra-r {
+    color: #F7931A;
+}
+
+/* Laranja */
+.letra-i {
+    color: #FEE33A;
+}
+
+/* Amarelo */
+.letra-a1 {
+    color: #4CAF50;
+}
+
+/* Verde */
+.letra-n {
+    color: #2196F3;
+}
+
+/* Azul */
+.letra-c2 {
+    color: #3F51B5;
+}
+
+/* Anil (Azul Escuro) */
+.letra-a2 {
+    color: #9C27B0;
+}
+
+/* Roxo/Violeta */
+
+/* Ajustes para o botão, se necessário (ele já usa a classe .btn) */
+.hero-content .btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+
+}
+
+.btn-1 {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s ease;
+    display: inline-block;
+    border-radius: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.btn-1:hover {
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-2 {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s ease;
+    display: inline-block;
+    border-radius: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.btn-2:hover {
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-3 {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s ease;
+    display: inline-block;
+    border-radius: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.btn-3:hover {
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.btn-4 {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s ease;
+    display: inline-block;
+    border-radius: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.btn-4:hover {
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.active .btn {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    transform: scale(1.05);
+    background-color: #0047AB;
+
+}
+
+
+/* Estado inicial (antes da animação) */
+.hero-content h1,
+.hero-content p,
+.hero-content .btn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final (visível) - será ativado via JS */
+.hero-content.visible h1,
+.hero-content.visible p,
+.hero-content.visible .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adiciona um atraso para cada elemento aparecer em sequência */
+.hero-content.visible p {
+    transition-delay: 0.2s;
+}
+
+.hero-content.visible .btn {
+    transition-delay: 0.4s;
+}
+
+
+
+.container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    /* O que mudou: */
+    display: flex;
+    align-items: center;
+    /* Centraliza o conteúdo do carrossel verticalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo do carrossel horizontalmente */
+    padding-top: 100px;
+    /* Empurra TUDO para baixo, criando espaço para o header */
+    background-color: #f8f9fa;
+}
+
+
+
+
+.list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+.item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 40px;
+    opacity: 0;
+
+    /*animação*/
+    transform: translateX(100vw);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    z-index: 2;
+
+}
+
+.active {
+    opacity: 1;
+    /*animação*/
+    transform: translateX(0);
+}
+
+.product-img {
+    flex: 1;
+    /* O que mudou: Faz a coluna da imagem ser flexível */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* O que mudou: Empurra a imagem para a direita, para perto do texto */
+    max-width: 500px;
+    /* Adicionado: Limita a largura máxima da coluna da imagem */
+}
+
+.product-img img {
+    width: 75%;
+    /* O que mudou: Imagem ocupa 100% do container dela */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    max-width: 450px;
+    /* Adicionado: Um limite máximo para a imagem não ficar gigante */
+    border-radius: 30px;
+    /*animação*/
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+    border-radius: 0px;
+}
+
+/*animação*/
+.active .product-img img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.content {
+    flex: 1;
+    /* O que mudou: Faz a coluna de texto ser flexível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* O que mudou: Centraliza o conteúdo verticalmente */
+    align-items: flex-start;
+    /* Mantém o texto alinhado à esquerda */
+    max-width: 900px;
+    /* Adicionado: Limita a largura para melhor leitura */
+    padding-left: 10px;
+}
+
+.product-tag {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #0047AB;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    /*animação*/
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
+}
+
+/*animação*/
+.active .product-tag {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.product-name {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+    margin-bottom: 10px;
+    /*animação*/
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
+}
+
+/*animação*/
+.active .product-name {
+    transform: translateX(0);
+    opacity: 1;
+
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* Aumentei a margem para dar mais espaço para o botão */
+    max-width: 500px;
+    text-align: justify;
+    /*animação*/
+    opacity: 0;
+    transform: translateX(600px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
+}
+
+/*animação*/
+.active .description {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 30px;
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    /*animação*/
+    transform: translateX(800px);
+    transition: transform 0.6s ease, opacity 0.6s ease, background 0.3s ease;
+    transition-delay: 0.5s;
+}
+
+.btn:hover {
+    transition-duration: 0.05s;
+    transition-timing-function: ease-out;
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #089cff, #089cff);
+    box-shadow: 0 0 20px rgba(8, 136, 255, 0.822);
+}
+
+/* CORREÇÃO para o botão do carrossel combinar posição e crescimento */
+.active .btn:hover {
+    transform: translateX(0) scale(1.1);
+}
+
+.arrows {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.arrow-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(112, 112, 112);
+    border: 1px solid #ffffff;
+}
+
+.arrow-btn:hover {
+    background-color: #089cff;
+    border-color: #ffffff;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15%;
+    z-index: 5;
+}
+
+.numbers {
+    font-family: "Orbitron", sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.dots {
+    display: flex;
+    gap: 10px;
+    top: 10px;
+}
+
+.dot {
+    width: 40px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+
+}
+
+.dot.active {
+    background-color: #089cff;
+}
+
+
+/* Styles for additional sections */
+.about-us-section {
+    display: flex;
+    min-height: 82vh;
+    padding: 50px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+
+
+}
+
+.about-us-logo {
+    max-width: 150px;
+    width: 150%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.about-us-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+
+}
+
+
+.about-us-section p {
+    font-size: 1.5rem;
+    color: #000000;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: justify;
+
+}
+
+
+.purpose-section {
+    padding: 80px 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.purpose-section h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.purpose-section p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    /* Centraliza o parágrafo */
+}
+
+.purpose-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Espaço entre os cards */
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem a linha se não couberem */
+}
+
+.purpose-card {
+    width: 100%;
+    max-width: 320px;
+    /* Largura máxima de cada card */
+    border-radius: 15px;
+    overflow: hidden;
+    /* Garante que a imagem com borda arredondada não vaze */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+    transform: translateY(-10px);
+    /* Efeito de levantar o card ao passar o mouse */
+    box-shadow: 0 12px 30px rgba(0, 71, 171, 0.2);
+}
+
+.purpose-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Remove qualquer espaço extra embaixo da imagem */
+}
+
+
+.address-section {
+    height: 90vh;
+    padding: 30px 30px;
+    text-align: center;
+    margin-bottom: 1px;
+
+
+
+}
+
+.address-section h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    /* Adjusted font size */
+    color: #000000;
+    margin-bottom: 10px;
+
+}
+
+
+
+#endereco-link {
+    display: inline-block;
+    color: #0047AB;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+#endereco-link:hover {
+    color: #00b7ffb6;
+    transform: scale(1.05);
+}
+
+#endereco-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #00b7ffb6;
+    transition: width 0.3s ease;
+}
+
+#endereco-link:hover::after {
+    width: 100%;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 410px;
+    border-radius: 15px;
+    top: 20px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.map-overlay::after {
+    content: 'Clique aqui para interagir com o mapa';
+    font-weight: 600;
+}
+
+.map-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.contact-section {
+    height: auto;
+    min-height: 90vh;
+    padding: 30px 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    /* Um cinza bem claro para diferenciar da seção anterior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.contact-section h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 10px;
+
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+
+.contact-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.contact-card {
+
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.808);
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 48, 206, 0.527), 0 0 5px rgb(0, 76, 238);
+
+}
+
+.contact-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+
+}
+
+.contact-card p {
+    color: #000000;
+}
+
+.contact-card .btn {
+    opacity: 1;
+    transform: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.additional-info {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 500px;
+    margin-top: 50px;
+    align-items: center;
+
+}
+
+.additional-info .info-item {
+    color: black;
+    padding: 20px;
+    min-width: 180px;
+    font-weight: 500;
+}
+
+
+
+.social-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+}
+
+.social-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon-facebook {
+    background-color: #3b5998;
+}
+
+.social-icon-whatsapp {
+    background-color: #25D366;
+}
+
+.social-icon-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-bar a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.social-bar a[href*="facebook.com"]:hover {
+    background-color: #004eb4;
+}
+
+.social-bar a[href*="wa.me"]:hover {
+    background-color: #25D366;
+}
+
+.social-bar a[href*="instagram.com"]:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+
+footer {
+
+    padding: 40px 20px;
+    padding-bottom: 80px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0047AB;
+
+    ;
+}
+
+/* ========================================================= */
+/* ESTILOS PARA PÁGINAS LEGAIS (TERMOS E PRIVACIDADE) - CORRIGIDO */
+/* ========================================================= */
+
+.legal-page-content {
+    background-color: #ffffff;
+    /* Fundo branco para combinar com o site */
+    color: #333333;
+    /* Cor de texto escura para legibilidade */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 150px 20px 50px 20px;
+}
+
+.legal-page-content h1 {
+    font-family: 'Playfair Display', serif;
+    color: #0047AB;
+    /* Cor azul primária do site */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dddddd;
+    /* Linha cinza clara */
+    padding-bottom: 10px;
+}
+
+.legal-page-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+    /* Cor preta para subtítulos */
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.legal-page-content p,
+.legal-page-content li {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333333;
+    /* Cor de texto escura */
+}
+
+.legal-page-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.legal-page-content p em {
+    color: #555555;
+    /* Cor cinza escura para ênfase */
+    font-style: italic;
+}
+
+.legal-page-content a {
+    color: #0047AB;
+    /* Cor azul primária para links */
+    text-decoration: underline;
+}
+
+.legal-page-content a:hover {
+    color: #089cff;
+    /* Cor azul clara para hover */
+}
+
+
+.footer-links {
+    margin-bottom: 20px;
+    font-size: 90%;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+#consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3f3f3f;
+    border-top: none;
+    padding: 20px 30px;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+#consent-banner.hidden {
+    transform: translateY(150%);
+}
+
+.consent-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.consent-text a {
+    color: #089cff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.consent-text a:hover {
+    color: #fff;
+}
+
+#accept-consent-btn {
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+
+    .logo-link {
+        width: 70%;
+        /* 1. Faz o link da logo ocupar 100% da largura do header */
+        max-width: none;
+        /* 2. Remove a largura máxima que vinha do estilo desktop */
+        padding: 5px 5px 5px;
+        /* 3. Adiciona um pequeno respiro vertical (opcional) */
+        display: block;
+        /* 4. Garante que o link se comporte como um bloco */
+        text-align: left;
+        /* 5. Centraliza a imagem dentro do link */
+    }
+
+    .logo {
+        width: 70%;
+        /* 6. Define a largura da logo (ajuste de 70% a 90% para um bom visual) */
+        max-width: 300px;
+        /* 7. Impede que a logo fique gigante em telas de tablet */
+        display: inline-block;
+        /* 8. Permite que a centralização do text-align funcione */
+        padding: 5px 5px 5px;
+        /* 9. Remove qualquer padding extra da imagem */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 12%;
+        transition: background-color 0.3s ease;
+
+    }
+
+    header.open {
+        width: 100%;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        /* Fundo semi-transparente para o menu aberto */
+        padding-bottom: 20px;
+        /* Adiciona um padding inferior quando o menu está aberto */
+        height: auto;
+        /* Deixa a altura se ajustar ao conteúdo */
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+        padding: 1px 0px;
+        margin-top: 1px;
+    }
+
+    header.open nav {
+        display: flex;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        padding: 1px 0;
+        padding-left: 35px;
+    }
+
+    header nav ul li a {
+        text-align: center;
+        font-size: 1rem;
+        color: #0047AB;
+    }
+
+    header.open nav ul li:not(:last-child) {
+        width: 80%;
+        text-align: center;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    nav a:hover {
+        color: #03f7ff;
+        text-shadow: 1px 1px 10px rgba(4, 247, 255, 0.726);
+    }
+
+    nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #00f7ff;
+        transition: width 0.3s ease;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 45px;
+        right: 25px;
+        margin-top: -3%;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    #cursos,
+    #sobre,
+    #proposito,
+    #contato,
+    #endereco {
+        scroll-margin-top: 90px;
+    }
+
+    .hero-section {
+        margin-top: 99px;
+        /* Mantém o espaçamento para o header fixo */
+        height: 90vh;
+        /* Altura ajustada para não ocupar a tela inteira */
+        display: flex;
+        /* Habilita flexbox para centralização */
+        align-items: center;
+        /* Centraliza o conteúdo verticalmente */
+        justify-content: center;
+        /* Centraliza o conteúdo horizontalmente */
+        padding: 0 20px;
+        /* Adiciona um respiro nas laterais */
+        box-sizing: border-box;
+        /* Garante que o padding não afete a largura total */
+        bottom: 0;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)), url('colegio-angelus.png');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(60%) contrast(90%);
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        color: #ffffff;
+        font-weight: 800;
+        /* Deixa o título mais forte e imponente */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        justify-content: center;
+        width: 90%;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+        /* Sombra mais leve para o parágrafo */
+
+    }
+
+    .highlight {
+        color: #ffffff;
+        /* Usa a cor azul principal do seu site */
+        font-weight: 700;
+        /* Deixa a palavra destacada um pouco mais forte */
+    }
+
+    .hero-content .btn {
+        width: 70%;
+        /* Define uma largura para o botão. 70% é um bom começo. */
+        max-width: 300px;
+        /* Impede que o botão fique grande demais em telas maiores. */
+        padding: 15px 10px;
+        /* Ajusta o espaçamento interno para o texto caber bem. */
+        text-align: center;
+        /* Garante que o texto DENTRO do botão fique centralizado. */
+        box-sizing: border-box;
+        /* Garante que o padding não aumente a largura total. */
+    }
+
+    /* AJUSTES DO CARROSSEL (seção .container) - Foco em reduzir espaço */
+    .container {
+        height: auto;
+        /* Ajuste a altura para caber mais conteúdo */
+        min-height: 90vh;
+        /* Reduzi o min-height para permitir mais flexibilidade */
+        padding: 0px 15px 20px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        box-sizing: border-box;
+
+
+    }
+
+    .item {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centraliza o conteúdo verticalmente */
+        align-items: center;
+        gap: 10px;
+        /* Um espaçamento consistente entre os elementos */
+        padding: 0;
+        /* Um pequeno respiro nas laterais */
+        text-align: center;
+        opacity: 0;
+        transform: translateX(100vw);
+        transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+        z-index: 2;
+
+    }
+
+    .active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1px;
+        /* *** MUITO IMPORTANTE: Garante 0 espaço abaixo da imagem *** */
+    }
+
+    .product-img img {
+        width: 100%;
+        height: auto;
+
+
+        /* As animações serão herdadas dos estilos de desktop, não precisa mudar aqui */
+    }
+
+    .active .product-img img {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .product-tag {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+        /* Margem reduzida */
+    }
+
+    .active .product-tag {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .product-name {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        /* Margem reduzida */
+        max-width: 95%;
+    }
+
+    .active .product-name {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        /* Um pouco maior para facilitar a leitura */
+        line-height: 1.5;
+        margin-bottom: 16px;
+        /* Espaço antes do botão */
+        max-width: 90%;
+    }
+
+    .active .description {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 12px 24px;
+    }
+
+    .active .btn {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Arrows - reposicionadas e redimensionadas para mobile */
+    .arrows {
+        width: 90%;
+        top: 42%;
+        /* Ajusta a posição vertical das setas */
+    }
+
+    .arrow-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    /* Indicators - reposicionados para mobile */
+    .indicators {
+        bottom: 50px;
+        /* Dá mais espaço da borda de baixo */
+    }
+
+    .dot {
+        width: 25px;
+    }
+
+    /* Outras seções */
+    .about-us-section {
+        top: 0;
+        margin-top: 0;
+        padding-top: 10;
+        margin-bottom: 0px;
+    }
+
+    .about-us-section h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .about-us-section p {
+        font-size: 1rem;
+    }
+
+    .purpose-section {
+        padding: 60px 20px;
+    }
+
+    .purpose-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .purpose-section p {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .purpose-cards-container {
+        flex-direction: column;
+        /* Coloca os cards um embaixo do outro */
+        align-items: center;
+        /* Centraliza os cards empilhados */
+        gap: 25px;
+        /* Espaço vertical entre os cards */
+    }
+
+    .purpose-card {
+        max-width: 300px;
+        /* Ajusta a largura máxima para celular */
+    }
+
+
+    .address-section {
+        height: auto;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        padding-top: 35px;
+        bottom: 100px;
+        margin-bottom: 30px;
+    }
+
+    .address-section h2 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    #endereco-link {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 280px;
+        top: 15px;
+    }
+
+    .map-overlay::after {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .contact-section {
+        width: 100%;
+        height: auto;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 5px;
+        align-items: center;
+
+
+    }
+
+    .contact-section h2 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .contact-card {
+        width: 95%;
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .contact-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-card p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-card .btn {
+        width: 70%;
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 40px 20px;
+        padding-bottom: 60px;
+    }
+
+    footer p,
+    footer P {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 5px;
+    }
+
+    .footer-links {
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+
+    .social-bar {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .social-bar a {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .arrow-feedback-active {
+        background-color: rgba(10, 216, 223, 0.89) !important;
+        border-color: #00f7ff !important;
+    }
+
+    .facebook-feedback-active {
+        background-color: #1877F2 !important;
+    }
+
+    .whatsapp-feedback-active {
+        background-color: #25D366 !important;
+    }
+
+    .instagram-feedback-active {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    }
+
+    #consent-banner {
+        flex-direction: column;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    .consent-text {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+
+    #accept-consent-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
