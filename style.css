@@ -368,6 +368,15 @@ nav a:hover::after {
 
 }
 
+.hero-content .btn:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
 .btn-email {
     padding: 10px 10px;
     font-size: 1.1rem;
