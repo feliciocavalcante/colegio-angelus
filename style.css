@@ -1524,7 +1524,6 @@ footer {
         /* Centraliza horizontalmente */
         align-items: center;
         /* Centraliza verticalmente */
-        height: 70vh;
         /* Ocupa 100% da altura da tela */
         flex-direction: column;
 
@@ -1539,14 +1538,17 @@ footer {
         width: 100%;
         text-align: center;
         color: #ffffff;
-        font-weight: 800;
+        font-weight: 900;
         /* Deixa o título mais forte e imponente */
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 
     }
-    .additional-info{
-        
+
+     .c-azul-logo{
+    
+    
     }
+    
 
 
 
