@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
 }
 
 html {
@@ -35,6 +35,9 @@ header {
 
 
 }
+
+
+
 
 
 
@@ -232,7 +235,7 @@ nav a:hover::after {
     flex-direction: column;
     justify-content: center;
     z-index: 6;
-     transition: height 0.3s ease;
+    transition: height 0.3s ease;
 
     text-align: center;
     align-items: center;
@@ -365,6 +368,29 @@ nav a:hover::after {
 
 }
 
+.btn-email{
+    padding: 10px 10px;
+    font-size: 1.1rem;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffffff;
+    background: linear-gradient(90deg, #0184fffa, #0028aada);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-email:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    background-color: #0047AB;
+    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5), 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
 .btn-1 {
     padding: 15px 30px;
     font-size: 1.1rem;
@@ -378,7 +404,8 @@ nav a:hover::after {
     transition: 0.5s ease;
     display: inline-block;
     border-radius: 25px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-1:hover {
@@ -401,7 +428,8 @@ nav a:hover::after {
     transition: 0.5s ease;
     display: inline-block;
     border-radius: 25px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-2:hover {
@@ -424,7 +452,8 @@ nav a:hover::after {
     transition: 0.5s ease;
     display: inline-block;
     border-radius: 25px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-3:hover {
@@ -448,7 +477,8 @@ nav a:hover::after {
     transition: 0.5s ease;
     display: inline-block;
     border-radius: 25px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-4:hover {
@@ -514,6 +544,7 @@ nav a:hover::after {
     padding-top: 100px;
     /* Empurra TUDO para baixo, criando espaço para o header */
     background-color: #f8f9fa;
+
 }
 
 
@@ -559,6 +590,7 @@ nav a:hover::after {
     /* O que mudou: Empurra a imagem para a direita, para perto do texto */
     max-width: 500px;
     /* Adicionado: Limita a largura máxima da coluna da imagem */
+
 }
 
 .product-img img {
@@ -574,7 +606,7 @@ nav a:hover::after {
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
     transition-delay: 0.5s;
-    border-radius: 0px;
+
 }
 
 /*animação*/
@@ -620,7 +652,7 @@ nav a:hover::after {
 
 .product-name {
     font-size: 2.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     line-height: 1;
     margin-bottom: 10px;
     /*animação*/
@@ -728,7 +760,7 @@ nav a:hover::after {
 }
 
 .numbers {
-    font-family: "Orbitron", sans-serif;
+    font-family: "poppins", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.2);
@@ -752,6 +784,77 @@ nav a:hover::after {
     background-color: #089cff;
 }
 
+.sobre-nos {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-nos-text {
+    width: 60%;
+  background-color: red;
+  height: 100vh;
+}
+ 
+
+.sobre-paragrafo {
+    height: 50%;
+    width: 100%;
+}
+
+.sobre-nos-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  
+}
+
+.sobre-nos-section h1{
+ font-family: "poppins", sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 80px;
+    text-align: center;
+   
+}
+
+.sobre-nos-container {
+  display: flex;
+  align-items: stretch; /* alinha altura entre imagem e texto */
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.imagem-sobre img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  object-fit: cover; /* mantém proporção visual agradável */
+  border-radius: 10px;
+  
+}
+
+.texto-sobre {
+  max-width: 900px;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: justify;
+  color: #000000;
+  background-color: #F8F9FA;
+  padding: 10px;
+  flex: 1;
+}
+
+
+.sobre-nos-logo {
+   margin-right: auto;
+}
+
 
 /* Styles for additional sections */
 .about-us-section {
@@ -759,24 +862,25 @@ nav a:hover::after {
     min-height: 82vh;
     padding: 50px 30px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 2px;
-
+    width: 100%;
 
 }
 
 .about-us-logo {
-    max-width: 150px;
-    width: 150%;
+    max-width: 450px;
+    width: 450%;
     height: auto;
     margin-bottom: 30px;
+    padding: 20px;
+
+
 }
 
 .about-us-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'poppins', serif;
     font-size: 2rem;
     color: #000000;
     margin-bottom: 20px;
@@ -792,6 +896,7 @@ nav a:hover::after {
     margin: 0 auto 40px auto;
     text-align: justify;
 
+
 }
 
 
@@ -802,7 +907,7 @@ nav a:hover::after {
 }
 
 .purpose-section h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
     font-size: 3rem;
     color: #000000;
     margin-bottom: 20px;
@@ -857,13 +962,10 @@ nav a:hover::after {
     padding: 30px 30px;
     text-align: center;
     margin-bottom: 1px;
-
-
-
 }
 
 .address-section h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
     font-size: 2rem;
     /* Adjusted font size */
     color: #000000;
@@ -887,8 +989,8 @@ nav a:hover::after {
 }
 
 #endereco-link:hover {
-    color: #00b7ffb6;
-    transform: scale(1.05);
+    color: #00010e;
+    transform: scale(1.00);
 }
 
 #endereco-link::after {
@@ -910,9 +1012,13 @@ nav a:hover::after {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 410px;
+    height: 300px;
     border-radius: 15px;
     top: 20px;
+    margin: 0 auto;
+    
+    
+  
 }
 
 .map-container iframe {
@@ -938,11 +1044,12 @@ nav a:hover::after {
     justify-content: center;
     align-items: center;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     font-size: 1.2rem;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    
 
 }
 
@@ -973,7 +1080,7 @@ nav a:hover::after {
 }
 
 .contact-section h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "poppins", sans-serif;
     font-size: 3rem;
     color: #000000;
     margin-bottom: 10px;
@@ -997,6 +1104,7 @@ nav a:hover::after {
     gap: 60px;
     width: 100%;
     margin-top: 10px;
+    
 
 }
 
@@ -1007,6 +1115,8 @@ nav a:hover::after {
     border: 1px solid rgba(0, 0, 0, 0.808);
     min-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .contact-card:hover {
@@ -1016,7 +1126,7 @@ nav a:hover::after {
 }
 
 .contact-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: "poppins", sans-serif;
     color: #000000;
     margin-bottom: 15px;
     font-size: 1.5rem;
@@ -1050,6 +1160,7 @@ nav a:hover::after {
     padding: 20px;
     min-width: 180px;
     font-weight: 500;
+    
 }
 
 
@@ -1079,14 +1190,17 @@ nav a:hover::after {
 
 .social-icon-facebook {
     background-color: #3b5998;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon-whatsapp {
     background-color: #25D366;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon-instagram {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-bar a:hover {
@@ -1133,7 +1247,7 @@ footer {
 }
 
 .legal-page-content h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'poppins', serif;
     color: #0047AB;
     /* Cor azul primária do site */
     font-size: 2.5rem;
@@ -1144,7 +1258,7 @@ footer {
 }
 
 .legal-page-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'poppins', serif;
     color: #000000;
     /* Cor preta para subtítulos */
     font-size: 1.8rem;
