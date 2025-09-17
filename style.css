@@ -906,6 +906,7 @@ nav a:hover::after {
     padding: 80px 30px;
     text-align: center;
     background-color: #f8f9fa;
+    
 }
 
 .purpose-section h2 {
@@ -913,14 +914,16 @@ nav a:hover::after {
     font-size: 3rem;
     color: #000000;
     margin-bottom: 20px;
+    
 }
 
 .purpose-section p {
-    font-size: 1.1rem;
-    color: #333;
+    color: #000000;
     line-height: 1.7;
     max-width: 800px;
     margin: 0 auto 50px auto;
+    font-weight: 500;
+    font-size: 18px;
     /* Centraliza o parágrafo */
 }
 
@@ -1513,8 +1516,6 @@ footer {
         height: 100%;
         z-index: 1;
         background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)), url('img/Cultivando-direito-limpoo.png');
-        background-size: cover;
-        background-position: center;
         filter: brightness(60%) contrast(90%);
     }
 
@@ -1544,10 +1545,7 @@ footer {
 
     }
 
-     .c-azul-logo{
     
-    
-    }
     
 
 
