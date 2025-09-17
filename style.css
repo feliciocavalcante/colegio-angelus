@@ -245,7 +245,6 @@ nav a:hover::after {
     margin-left: auto;
     margin-right: 8%;
     -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
 
 
 }
@@ -368,7 +367,7 @@ nav a:hover::after {
 
 }
 
-.btn-email{
+.btn-email {
     padding: 10px 10px;
     font-size: 1.1rem;
     opacity: 1;
@@ -785,17 +784,17 @@ nav a:hover::after {
 }
 
 .sobre-nos {
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .sobre-nos-text {
     width: 60%;
-  background-color: red;
-  height: 100vh;
+    background-color: red;
+    height: 100vh;
 }
- 
+
 
 .sobre-paragrafo {
     height: 50%;
@@ -803,56 +802,58 @@ nav a:hover::after {
 }
 
 .sobre-nos-section {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-  
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+
 }
 
-.sobre-nos-section h1{
- font-family: "poppins", sans-serif;
+.sobre-nos-section h1 {
+    font-family: "poppins", sans-serif;
     font-size: 3rem;
     color: #000000;
     margin-bottom: 80px;
     text-align: center;
-   
+
 }
 
 .sobre-nos-container {
-  display: flex;
-  align-items: stretch; /* alinha altura entre imagem e texto */
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 100px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: stretch;
+    /* alinha altura entre imagem e texto */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 100px;
+    flex-wrap: wrap;
 }
 
 .imagem-sobre img {
-  width: 100%;
-  max-width: 500px;
-  height: 100%;
-  object-fit: cover; /* mantém proporção visual agradável */
-  border-radius: 10px;
-  
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    object-fit: cover;
+    /* mantém proporção visual agradável */
+    border-radius: 10px;
+
 }
 
 .texto-sobre {
-  max-width: 900px;
-  font-family: "poppins", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.9;
-  text-align: justify;
-  color: #000000;
-  background-color: #F8F9FA;
-  padding: 10px;
-  flex: 1;
+    max-width: 900px;
+    font-family: "poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.9;
+    text-align: justify;
+    color: #000000;
+    background-color: #F8F9FA;
+    padding: 10px;
+    flex: 1;
 }
 
 
 .sobre-nos-logo {
-   margin-right: auto;
+    margin-right: auto;
 }
 
 
@@ -1016,9 +1017,9 @@ nav a:hover::after {
     border-radius: 15px;
     top: 20px;
     margin: 0 auto;
-    
-    
-  
+
+
+
 }
 
 .map-container iframe {
@@ -1049,7 +1050,7 @@ nav a:hover::after {
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    
+
 
 }
 
@@ -1104,7 +1105,7 @@ nav a:hover::after {
     gap: 60px;
     width: 100%;
     margin-top: 10px;
-    
+
 
 }
 
@@ -1160,7 +1161,7 @@ nav a:hover::after {
     padding: 20px;
     min-width: 180px;
     font-weight: 500;
-    
+
 }
 
 
@@ -1518,12 +1519,14 @@ footer {
     }
 
     .hero-content {
-        position: absolute;
-        top: 30px;
-        width: 100%;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        /* Centraliza horizontalmente */
         align-items: center;
+        /* Centraliza verticalmente */
+        height: 100vh;
+        /* Ocupa 100% da altura da tela */
+        flex-direction: column;
 
 
 
@@ -1534,7 +1537,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 40px;
+        font-size: 35px;
         width: 100%;
         text-align: center;
         color: #ffffff;
@@ -1544,16 +1547,7 @@ footer {
 
     }
 
-    .hero-content p {
-        font-size: 1.2rem;
-        justify-content: center;
-        width: 90%;
-        text-align: center;
-        color: #ffffff;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
-        /* Sombra mais leve para o parágrafo */
 
-    }
 
     .highlight {
         color: #ffffff;
@@ -1585,7 +1579,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 0;
+        margin-top: 20px;
         box-sizing: border-box;
 
 
