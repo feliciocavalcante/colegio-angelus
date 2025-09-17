@@ -245,6 +245,7 @@ nav a:hover::after {
     margin-left: auto;
     margin-right: 8%;
     -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 
 
 }
@@ -1147,7 +1148,6 @@ nav a:hover::after {
 
 .additional-info {
     display: flex;
-    gap: 80px;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 500px;
@@ -1524,7 +1524,7 @@ footer {
         /* Centraliza horizontalmente */
         align-items: center;
         /* Centraliza verticalmente */
-        height: 100vh;
+        height: 70vh;
         /* Ocupa 100% da altura da tela */
         flex-direction: column;
 
@@ -1534,9 +1534,7 @@ footer {
 
     .hero-content h1 {
         flex-direction: column;
-        display: flex;
         justify-content: center;
-        align-items: center;
         font-size: 35px;
         width: 100%;
         text-align: center;
@@ -1545,6 +1543,9 @@ footer {
         /* Deixa o título mais forte e imponente */
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 
+    }
+    .additional-info{
+        
     }
 
 
@@ -1707,7 +1708,8 @@ footer {
 
     /* Indicators - reposicionados para mobile */
     .indicators {
-        bottom: 50px;
+        bottom: 10px;
+        
         /* Dá mais espaço da borda de baixo */
     }
 
