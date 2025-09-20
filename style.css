@@ -50,7 +50,7 @@ header {
     /* Centraliza a imagem verticalmente */
     width: fit-content;
     /* Faz a largura do link se ajustar ao conteúdo (a imagem) */
-    max-width: 150px;
+    max-width: 200px;
     /* Um limite superior razoável para a logo */
     flex-shrink: 0;
     /* Impede que o link encolha mais do que o necessário em telas menores */
