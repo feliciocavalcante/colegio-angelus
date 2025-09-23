@@ -426,6 +426,13 @@ nav a:hover::after {
 
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
 .btn-2 {
     padding: 12px 20px;
     font-size: 16px;
@@ -867,7 +874,83 @@ nav a:hover::after {
 .sobre-nos-logo {
     margin-right: auto;
 }
+/* Estilização da seção principal */
+.galeria {
+    text-align: center; /* Centraliza o título e a descrição */
+    padding: 40px 20px; /* Adiciona espaçamento interno para as laterais */
+}
 
+.galeria h1 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.galeria p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Container que define o grid */
+.galeria-container {
+    display: grid;
+    /* Define colunas que se ajustam automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Espaço entre os itens da galeria */
+    max-width: 1000px; /* Limita a largura do container */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 15px; /* Evita que o conteúdo cole nas bordas em telas pequenas */
+}
+
+/* Estilo de cada link da galeria */
+.galeria-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que a imagem não "vaze" do container */
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+}
+
+.galeria-link:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.galeria-link img {
+    width: 100%;
+    height: 200px; /* Tamanho fixo para a altura da imagem */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço, sem distorcer */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.galeria-link h3 {
+    font-size: 1.25rem;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+/* Estilização para Mobile */
+@media (max-width: 768px) {
+    .galeria h1 {
+        font-size: 2rem;
+    }
+
+    .galeria p {
+        font-size: 1rem;
+    }
+
+    .galeria-link img {
+        height: 180px; /* Ajusta a altura da imagem para telas menores */
+    }
+}
 
 /* Styles for additional sections */
 .about-us-section {
